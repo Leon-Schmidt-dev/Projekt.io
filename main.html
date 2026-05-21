@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hebamme Lorenz - Hargitta Tilp | Nürnberg</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6B4E71;
+            --primary-light: #8B6B91;
+            --primary-dark: #4A3550;
+            --secondary: #F0E6EF;
+            --accent: #C9A5C7;
+            --accent-light: #E8D5E4;
+            --gold: #D4A843;
+            --gold-light: #F0D78C;
+            --text: #1A1A1A;
+            --text-light: #4A4A4A;
+            --light: #FAF7FA;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #6B4E71 0%, #8B6B91 50%, #A889A8 100%);
+            --gradient-gold: linear-gradient(135deg, #D4A843 0%, #F0D78C 100%);
+            --shadow-sm: 0 2px 15px rgba(107,78,113,0.08);
+            --shadow-md: 0 10px 30px rgba(107,78,113,0.12);
+            --shadow-lg: 0 20px 60px rgba(107,78,113,0.15);
+            --shadow-xl: 0 30px 80px rgba(107,78,113,0.2);
+            --font-script: 'Dancing Script', cursive;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Raleway', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text);
+            background: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--light); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 20px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-light); }
+        ::selection { background: var(--accent-light); color: var(--primary-dark); }
+
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes scaleInUp {
+            from { opacity: 0; transform: scale(0.8) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(2deg); }
+            50% { transform: translateY(-10px) rotate(-1deg); }
+            75% { transform: translateY(-25px) rotate(1deg); }
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(107,78,113,0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(107,78,113,0); }
+        }
+        @keyframes pulseGold {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,168,67,0.4); }
+            50% { transform: scale(1.08); box-shadow: 0 0 0 20px rgba(212,168,67,0); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        @keyframes leafSway {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(8deg) scale(1.05); }
+            75% { transform: rotate(-6deg) scale(0.95); }
+        }
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.15); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+            60% { transform: scale(1); }
+        }
+        @keyframes rotateIn {
+            from { opacity: 0; transform: rotate(-180deg) scale(0); }
+            to { opacity: 1; transform: rotate(0deg) scale(1); }
+        }
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes textReveal {
+            from { opacity: 0; transform: translateY(20px); filter: blur(10px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        @keyframes borderGlow {
+            0%, 100% { border-color: var(--accent); box-shadow: 0 0 20px rgba(201,165,199,0.3); }
+            50% { border-color: var(--gold); box-shadow: 0 0 30px rgba(212,168,67,0.4); }
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+        @keyframes waveFlow {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+        @keyframes softGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(212,168,67,0.3); }
+            50% { text-shadow: 0 0 30px rgba(212,168,67,0.6); }
+        }
+        @keyframes drawLine {
+            from { width: 0; }
+            to { width: 80px; }
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .animated-bg .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.04;
+            animation: floatSlow 15s ease-in-out infinite;
+        }
+        .animated-bg .circle:nth-child(1) { width: 300px; height: 300px; background: var(--primary); top: 10%; left: 5%; animation-delay: 0s; }
+        .animated-bg .circle:nth-child(2) { width: 200px; height: 200px; background: var(--accent); top: 60%; right: 10%; animation-delay: -5s; }
+        .animated-bg .circle:nth-child(3) { width: 400px; height: 400px; background: var(--gold-light); bottom: 10%; left: 20%; animation-delay: -10s; }
+        .animated-bg .circle:nth-child(4) { width: 150px; height: 150px; background: var(--primary-light); top: 40%; left: 60%; animation-delay: -7s; }
+        .animated-bg .circle:nth-child(5) { width: 250px; height: 250px; background: var(--accent-light); bottom: 30%; right: 25%; animation-delay: -12s; }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 30px rgba(107,78,113,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+        .navbar.scrolled {
+            padding: 0.6rem 2rem;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 1px solid var(--secondary);
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-script);
+            animation: slideInDown 0.8s ease;
+            transition: var(--transition);
+        }
+        .logo:hover { color: var(--gold); transform: scale(1.05); }
+        .logo-icon { display: inline-block; animation: leafSway 3s ease-in-out infinite; font-size: 1.8rem; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            position: relative;
+            padding: 0.4rem 0;
+            font-family: var(--font-body);
+            letter-spacing: 0.3px;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-gold);
+            transition: width 0.4s ease;
+            border-radius: 2px;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--gold); font-weight: 600; }
+        .nav-links a.active::after { width: 100%; background: var(--gold); }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        .hamburger:hover { transform: scale(1.1); color: var(--gold); }
+
+        /* Hero Section - HELLER HINTERGRUND mit schwarzer Schrift */
+        .hero {
+            background: linear-gradient(135deg, #FEF9F4 0%, #FFF5F9 25%, #FDF6FF 50%, #FFF8F5 75%, #FEF9F4 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+            padding: 6rem 2rem 5rem;
+            color: var(--text);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(201,165,199,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 12s ease-in-out infinite;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212,168,67,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        .hero-sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .sparkle {
+            position: absolute;
+            font-size: 1.8rem;
+            animation: sparkle 2.5s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--gradient);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite, pulse 3s ease-in-out infinite;
+            color: white;
+            padding: 0.8rem 2.2rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            box-shadow: 0 5px 20px rgba(107,78,113,0.3);
+        }
+
+        .hero-image {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            margin: 0 auto 2rem auto;
+            background: linear-gradient(135deg, var(--secondary), white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            animation: heartBeat 4s ease-in-out infinite;
+            box-shadow: 0 20px 50px rgba(107,78,113,0.2);
+        }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+        .hero-image-placeholder { color: var(--primary); font-size: 0.85rem; text-align: center; font-family: var(--font-body); opacity: 0.7; }
+
+        /* SCHWARZE SCHRIFT IM HERO */
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            font-family: var(--font-heading);
+            animation: textReveal 1s ease;
+            color: #1A1A1A;
+        }
+        .hero .script-name {
+            font-family: var(--font-script);
+            font-size: 4.5rem;
+            display: block;
+            color: var(--primary);
+            margin: 0.3rem 0;
+            animation: textReveal 1.2s ease 0.2s, softGlow 3s ease-in-out infinite;
+        }
+        .hero .highlight {
+            background: linear-gradient(120deg, var(--gold), var(--primary), var(--gold));
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto 2.5rem auto;
+            line-height: 1.9;
+            font-family: var(--font-body);
+            font-weight: 400;
+            animation: textReveal 1.4s ease 0.4s;
+            color: #333;
+        }
+
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-block;
+            padding: 1.1rem 3rem;
+            background: var(--gradient);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            font-family: var(--font-body);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 20px rgba(107,78,113,0.3);
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        .btn:hover::before { left: 0; }
+        .btn:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: none;
+            animation: none;
+        }
+        .btn-outline:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.08;
+            font-size: 2.5rem;
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        /* Sections */
+        section { padding: 6rem 2rem; position: relative; }
+        section:nth-child(odd) { background: var(--white); }
+        section:nth-child(even) { background: var(--light); }
+
+        .container { max-width: 1150px; margin: 0 auto; position: relative; z-index: 1; }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.5rem 1.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 3.2rem;
+            font-weight: 700;
+            font-family: var(--font-script);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-gold);
+            margin: 1rem auto 0;
+            border-radius: 3px;
+            animation: drawLine 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 4rem;
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: var(--font-body);
+            font-weight: 400;
+        }
+
+        /* Services Gallery */
+        .services-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .gallery-image {
+            width: 100%;
+            height: 320px;
+            border-radius: 25px;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+        }
+        .gallery-image:hover { transform: translateY(-10px) scale(1.02); box-shadow: var(--shadow-xl); }
+        .gallery-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+        .gallery-image:hover::before { opacity: 0.08; }
+        .gallery-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .gallery-image:hover img { transform: scale(1.05); }
+        .gallery-image-placeholder { text-align: center; color: var(--primary); font-size: 0.9rem; padding: 1rem; font-family: var(--font-body); z-index: 0; }
+        .gallery-image-placeholder .icon { font-size: 4rem; display: block; margin-bottom: 0.8rem; animation: float 4s ease-in-out infinite; }
+
+        /* Services Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+            border-radius: 5px;
+        }
+        .service-card:hover { transform: translateY(-15px); box-shadow: var(--shadow-xl); border-color: var(--accent-light); background: linear-gradient(180deg, var(--white) 0%, var(--light) 100%); }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: var(--transition);
+            position: relative;
+        }
+        .service-icon::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: var(--secondary);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.4s ease;
+            z-index: -1;
+        }
+        .service-card:hover .service-icon::after { transform: translate(-50%, -50%) scale(1); }
+        .service-card:hover .service-icon { transform: scale(1.3) rotate(10deg); animation: bounceIn 0.6s ease; }
+        .service-card h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.3rem; font-family: var(--font-heading); font-weight: 600; }
+        .service-card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; font-family: var(--font-body); font-weight: 400; }
+
+        /* Services Description */
+        .services-description {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 25px;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-md);
+            line-height: 2;
+            color: var(--text-light);
+            font-family: var(--font-body);
+            font-weight: 400;
+            border-left: 4px solid var(--accent);
+            transition: var(--transition);
+        }
+        .services-description:hover { box-shadow: var(--shadow-lg); border-left-color: var(--gold); }
+
+        /* About Section */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-image-wrapper { position: relative; display: flex; justify-content: center; }
+        .about-image {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            animation: float 7s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+            border: 4px solid white;
+        }
+        .about-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+        .about-image-decoration {
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            border: 3px dashed var(--accent);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: float 6s ease-in-out infinite reverse;
+            opacity: 0.6;
+        }
+        .about-image-ring {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 2px solid var(--gold-light);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotateIn 10s linear infinite;
+            opacity: 0.4;
+        }
+        .about-image-placeholder { color: var(--primary); font-size: 0.9rem; text-align: center; padding: 1rem; font-family: var(--font-body); }
+        .about-text h3 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2.5rem; font-family: var(--font-script); }
+        .about-text p { margin-bottom: 1.2rem; color: var(--text-light); line-height: 1.9; font-family: var(--font-body); font-weight: 400; }
+        .qualification-badges { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+        .badge {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            font-family: var(--font-body);
+            cursor: default;
+        }
+        .badge:hover { background: var(--accent-light); transform: translateY(-3px); box-shadow: var(--shadow-sm); border-color: var(--primary-light); }
+
+        /* Contact Section */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+        .contact-info {
+            background: var(--gradient);
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+            color: white;
+            padding: 3.5rem;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            right: -60px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+        .contact-info::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,215,0,0.2);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+        .contact-info h3 { margin-bottom: 1.5rem; font-size: 2.5rem; position: relative; z-index: 1; font-family: var(--font-script); }
+        .contact-info > p { position: relative; z-index: 1; opacity: 0.95; margin-bottom: 2rem; line-height: 1.8; font-family: var(--font-body); font-weight: 300; }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            padding: 0.8rem;
+            border-radius: 15px;
+        }
+        .contact-item:hover { transform: translateX(8px); background: rgba(255,255,255,0.1); }
+        .contact-item .icon {
+            font-size: 1.3rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        .contact-item:hover .icon { background: rgba(255,215,0,0.3); animation: pulse 1s ease-in-out; }
+        .contact-item a { color: white; text-decoration: none; transition: var(--transition); }
+        .contact-item a:hover { color: var(--gold-light); }
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: #25D366;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            position: relative;
+            z-index: 1;
+            font-size: 1.05rem;
+        }
+        .btn-whatsapp:hover { background: #1ea952; transform: translateY(-5px); box-shadow: 0 15px 35px rgba(37,211,102,0.4); }
+        .btn-whatsapp i { font-size: 1.3rem; animation: waveFlow 2s ease-in-out infinite; }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3.5rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-form:hover { box-shadow: var(--shadow-xl); }
+        .contact-form h3 { color: var(--primary); margin-bottom: 2rem; font-size: 2.5rem; font-family: var(--font-script); position: relative; z-index: 1; }
+        .form-group { margin-bottom: 1.5rem; position: relative; z-index: 1; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-family: var(--font-body); font-size: 0.9rem; letter-spacing: 0.3px; }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.1rem 1.5rem;
+            border: 2px solid #eee;
+            border-radius: 15px;
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            background: #fafafa;
+            resize: vertical;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus { outline: none; border-color: var(--accent); background: white; box-shadow: 0 0 0 5px rgba(201,165,199,0.1); }
+        .form-group textarea { min-height: 120px; }
+        .consent-text { font-size: 0.8rem; color: var(--text-light); margin: 1.5rem 0; line-height: 1.6; font-family: var(--font-body); position: relative; z-index: 1; }
+        .consent-text a { color: var(--primary); text-decoration: underline; }
+        .btn-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--gradient);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            font-family: var(--font-body);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        .btn-submit:hover::after { width: 400px; height: 400px; }
+        .btn-submit:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+        .btn-submit:active { transform: translateY(0); }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            font-family: var(--font-body);
+            position: relative;
+        }
+        footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--gradient-gold); }
+        footer a { color: var(--gold-light); text-decoration: none; transition: var(--transition); }
+        footer a:hover { color: var(--gold); text-decoration: underline; }
+        .footer-info { margin-bottom: 1.5rem; line-height: 2; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; font-size: 0.9rem; }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(30px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+        }
+        .mobile-menu.active { display: flex; animation: fadeInUp 0.4s ease; }
+        .mobile-menu a { text-decoration: none; color: var(--text); font-size: 1.5rem; font-weight: 600; transition: var(--transition); font-family: var(--font-heading); }
+        .mobile-menu a:hover { color: var(--gold); transform: scale(1.1); }
+        .close-menu {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 2.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        .close-menu:hover { transform: rotate(90deg); color: var(--gold); }
+
+        /* Scroll-to-top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 99;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .scroll-to-top:hover { transform: translateY(-5px); }
+        .scroll-to-top.visible { display: flex; }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .services-gallery {
+                grid-template-columns: repeat(3, 1fr); /* Bilder bleiben horizontal nebeneinander */
+                gap: 1rem;
+                max-width: 100%;
+                margin: 0 auto 2rem;
+            }
+            .gallery-image {
+                height: 200px; /* Kleinere Höhe für mobile Ansicht */
+            }
+            .contact-grid, .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .hero { padding: 4rem 1.5rem; min-height: auto; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero .script-name { font-size: 3rem; }
+            .hero p { font-size: 1rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 85%; text-align: center; }
+            .btn-outline { margin-left: 0; }
+            .section-title { font-size: 2.4rem; }
+            section { padding: 4rem 1.5rem; }
+            .services-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
+            .contact-info, .contact-form { padding: 2rem 1.8rem; }
+            .services-description { padding: 2rem 1.5rem; }
+            .about-image { width: 220px; height: 220px; }
+            .about-image-decoration { width: 250px; height: 250px; }
+            .about-image-ring { width: 270px; height: 270px; }
+            .scroll-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+            
+            /* Für sehr kleine Bildschirme: Bilder noch etwas kleiner, aber horizontal */
+            .services-gallery {
+                gap: 0.8rem;
+            }
+            .gallery-image {
+                height: 160px;
+                border-radius: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .script-name { font-size: 2.5rem; }
+            .hero-badge { font-size: 0.8rem; padding: 0.5rem 1.5rem; }
+            .section-title { font-size: 2rem; }
+            .contact-info h3, .contact-form h3 { font-size: 2rem; }
+            .about-text h3 { font-size: 2rem; }
+            
+            /* Auf sehr kleinen Handys: Bilder bleiben horizontal, aber noch kleiner */
+            .services-gallery {
+                grid-template-columns: repeat(3, 1fr); /* Weiterhin 3 Spalten */
+                gap: 0.5rem;
+            }
+            .gallery-image {
+                height: 120px;
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-icon">🌿</span> Hebamme Lorenz
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#services">Leistungen</a></li>
+            <li><a href="#about">Über mich</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menü öffnen">☰</button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" onclick="toggleMenu()" aria-label="Menü schließen">✕</button>
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#services" onclick="toggleMenu()">Leistungen</a>
+        <a href="#about" onclick="toggleMenu()">Über mich</a>
+        <a href="#contact" onclick="toggleMenu()">Kontakt</a>
+    </div>
+
+    <!-- Home / Hero Section mit HELLEM Hintergrund und SCHWARZER Schrift -->
+    <section class="hero" id="home">
+        <div class="hero-sparkles">
+            <span class="sparkle" style="top: 10%; left: 8%; animation-delay: 0s; color: var(--gold);">✦</span>
+            <span class="sparkle" style="top: 20%; right: 12%; animation-delay: 0.5s; color: var(--primary);">✧</span>
+            <span class="sparkle" style="bottom: 18%; left: 15%; animation-delay: 1s; color: var(--gold);">✦</span>
+            <span class="sparkle" style="bottom: 25%; right: 8%; animation-delay: 1.5s; color: var(--accent);">✧</span>
+            <span class="sparkle" style="top: 45%; left: 3%; animation-delay: 0.8s; color: var(--primary-light);">✦</span>
+            <span class="sparkle" style="top: 55%; right: 5%; animation-delay: 2s; color: var(--gold);">✧</span>
+        </div>
+        <div class="floating-element" style="top: 10%; left: 5%; font-size: 3rem;">🌸</div>
+        <div class="floating-element" style="top: 15%; right: 8%; font-size: 2.5rem; animation-delay: 1s;">🌺</div>
+        <div class="floating-element" style="bottom: 15%; left: 10%; font-size: 3.5rem; animation-delay: 2s;">🌷</div>
+        <div class="floating-element" style="bottom: 20%; right: 12%; font-size: 2rem; animation-delay: 0.5s;">💮</div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">✨ Herzlich willkommen in Nürnberg ✨</div>
+            
+            <!-- HOME: 1 Bild -->
+            <div class="hero-image animate-on-scroll scale-in">
+                <img src="Webseite Lorenz/Start.webp" alt="Hebamme Lorenz">
+            </div>
+            
+            <h1>Hebamme <span class="highlight">Lorenz</span></h1>
+            <span class="script-name">Hargitta Tilp</span>
+            <p>Herzlich willkommen auf meiner Website! Seit August 2012 begleite ich als Hebamme Frauen und ihre Familien in der Innenstadt von Nürnberg. Mit einem breiten Spektrum an Leistungen stehe ich Ihnen einfühlsam zur Seite, ganz individuell und auf Ihre Bedürfnisse zugeschnitten. Von der Schwangerschaftsbetreuung bis zur Wochenbett-Nachsorge – hier finden Sie kompetente Unterstützung für einen gesunden Start ins Familienleben. Fühlen Sie sich herzlich eingeladen, mehr über meine Arbeit und Angebote zu erfahren.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">✨ Kontakt aufnehmen</a>
+                <a href="#services" class="btn btn-outline">Meine Leistungen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <span class="section-badge animate-on-scroll fade-in-up">Leistungen</span>
+            <h2 class="section-title animate-on-scroll fade-in-up">Meine Leistungen</h2>
+            <p class="section-subtitle animate-on-scroll fade-in-up">Umfassende Betreuung für Ihre individuelle Reise</p>
+            
+            <!-- SERVICES: 3 Bilder Galerie -->
+            <div class="services-gallery">
+                <div class="gallery-image animate-on-scroll fade-in-left">
+                    <img src="Webseite Lorenz/Leistung.webp" alt="">
+                </div>
+                <div class="gallery-image animate-on-scroll scale-in-up">
+                    <img src="Webseite Lorenz/Leistung.avif" alt="">
+                </div>
+                <div class="gallery-image animate-on-scroll fade-in-right">
+                    <img src="Webseite Lorenz/Zimmer.avif" alt="">
+                </div>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll scale-in"><div class="service-icon">🤰</div><h3>Beratung während der Schwangerschaft</h3><p>Individuelle Beratung, die Fragen beantwortet, Ängste lindert und eine vertrauensvolle Atmosphäre schafft.</p></div>
+                <div class="service-card animate-on-scroll scale-in"><div class="service-icon">💆‍♀️</div><h3>Thai Schwangerenmassage</h3><p>Entspannende Massage (Kasse & Privat), die körperliche Beschwerden lindert und die Mutter-Kind-Verbindung fördert.</p></div>
+                <div class="service-card animate-on-scroll scale-in"><div class="service-icon">👫</div><h3>Individuelle Geburtsvorbereitung</h3><p>Maßgeschneiderte Vorbereitung – auch für Paare – abgestimmt auf Ihre Wünsche für eine sichere Geburtserfahrung.</p></div>
+                <div class="service-card animate-on-scroll scale-in"><div class="service-icon">👶</div><h3>Babypflege Kurs</h3><p>Praktische Tipps und Anleitungen für die liebevolle Pflege Ihres Neugeborenen.</p></div>
+                <div class="service-card animate-on-scroll scale-in"><div class="service-icon">🍼</div><h3>Stillkurs</h3><p>Kompetente Anleitung und Unterstützung für einen erfolgreichen Stillbeginn.</p></div>
+                <div class="service-card animate-on-scroll scale-in"><div class="service-icon">🏠</div><h3>Nachsorge</h3><p>Wochenbettbetreuung für eine gute Eingewöhnung und Unterstützung nach der Geburt.</p></div>
+                <div class="service-card animate-on-scroll scale-in"><div class="service-icon">🥕</div><h3>Hilfe bei der Beikosteinführung</h3><p>Begleitung und Beratung für die optimale Ernährung Ihres Babys beim Übergang zu fester Nahrung.</p></div>
+            </div>
+
+            <div class="services-description animate-on-scroll fade-in-up">
+                <p>Als erfahrene Hebamme und Expertin für Schwangerschaft und Geburt biete ich ein umfassendes Leistungsspektrum an, das darauf abzielt, werdende Eltern auf jedem Schritt ihres Weges zu begleiten. Meine Beratung während der Schwangerschaft ist darauf ausgerichtet, Fragen zu beantworten, Ängste zu lindern und eine vertrauensvolle Atmosphäre zu schaffen, in der Sie sich sicher und unterstützt fühlen.</p>
+                <p style="margin-top: 1rem;">Zusätzlich zur Beratung biete ich eine entspannende Thai-Schwangerenmassage an, die nicht nur körperliche Beschwerden lindert, sondern auch eine tiefe Verbindung zwischen Mutter und Kind fördert. Meine individuelle Geburtsvorbereitung, maßgeschneidert für Paare, ist darauf ausgerichtet, Ihre Bedürfnisse und Wünsche zu berücksichtigen, um eine Geburtserfahrung zu schaffen, die sowohl sicher als auch erfüllend ist.</p>
+                <p style="margin-top: 1rem;">Nach der Geburt stehe ich Ihnen weiterhin zur Seite, indem ich Wochenbettbetreuung anbiete, um sicherzustellen, dass Sie und Ihr Baby sich gut eingewöhnen und unterstützt fühlen. Zusätzlich biete ich einen Babypflegekurs an, der praktische Tipps und Anleitungen für die Pflege Ihres Neugeborenen bietet, einschließlich Hilfe bei der Beikosteinführung, um sicherzustellen, dass Ihr Baby die bestmögliche Ernährung erhält, wenn es Zeit für feste Nahrung ist. Mit meinem ganzheitlichen Ansatz unterstütze ich Sie dabei, die wundervolle Reise der Schwangerschaft, Geburt und Elternschaft zu genießen und zu erleben.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <span class="section-badge animate-on-scroll fade-in-up">Über mich</span>
+            <h2 class="section-title animate-on-scroll fade-in-up">Über Hebamme Lorenz</h2>
+            <p class="section-subtitle animate-on-scroll fade-in-up">Hargitta Tilp – Ihre Hebamme in Nürnberg</p>
+            <div class="about-grid">
+                <div class="about-image-wrapper animate-on-scroll fade-in-left">
+                    <div class="about-image-ring"></div>
+                    <div class="about-image-decoration"></div>
+                    <div class="about-image">
+                        <!-- ÜBER UNS: 1 Bild -->
+                        <img src="Webseite Lorenz/Ich.webp" alt="Hebamme Lorenz">
+                    </div>
+                </div>
+                <div class="about-text animate-on-scroll fade-in-right">
+                    <h3>Ich heiße Hargitta Tilp</h3>
+                    <p>Als erfahrene Hebamme mit einer Leidenschaft für Medizin, insbesondere für Schwangerschaft und Babys, bringe ich seit 2012 meine Expertise in die Innenstadt von Nürnberg ein.</p>
+                    <p>Mein Weg führte mich durch Studien in Ungarn und England, wo ich an renommierten Universitäten wie der Manchester Universität Salford und der Universität Pecs meine Ausbildung absolvierte.</p>
+                    <p>Mit zwei Töchtern meiner eigenen verstehe ich die Bedeutung von Fürsorge und Empathie während der Geburt und darüber hinaus. Meine Praxis ist geprägt von LGBTQ+-Freundlichkeit und einem tiefen Verständnis für die Vielfalt in Familienstrukturen.</p>
+                    <p>Neben meinem Engagement für die Gesundheit von Mutter und Kind hege ich Interessen für Literatur, Yoga und Joggen, die meine Ausgewogenheit und mein Wohlbefinden unterstützen.</p>
+                    <p><strong>Ich spreche Deutsch, Englisch und Ungarisch.</strong></p>
+                    <div class="qualification-badges">
+                        <span class="badge">🏥 Seit 2012</span>
+                        <span class="badge">🌈 LGBTQ+ freundlich</span>
+                        <span class="badge">🗣️ Deutsch/Englisch/Ungarisch</span>
+                        <span class="badge">🎓 International ausgebildet</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <span class="section-badge animate-on-scroll fade-in-up">Kontakt</span>
+            <h2 class="section-title animate-on-scroll fade-in-up">Kontaktieren Sie mich</h2>
+            <p class="section-subtitle animate-on-scroll fade-in-up">Wie kann ich Ihnen helfen?</p>
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll fade-in-left">
+                    <h3>So erreichen Sie mich</h3>
+                    <p>Rufen Sie mich an oder schreiben Sie mir per WhatsApp oder E-Mail und machen Sie einen Termin. Ich freue mich auf Ihren Besuch!</p>
+                    <a href="https://wa.me/4915143815811" class="btn-whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Kontakt per WhatsApp</a>
+                    <div class="contact-item" style="margin-top: 2rem;"><div class="icon">📍</div><div><strong>Adresse</strong><br>Hebamme Lorenz<br>Breite Gasse 82<br>4. OG mit Aufzug<br>90402 Nürnberg</div></div>
+                    <div class="contact-item"><div class="icon">📞</div><div><strong>Telefon</strong><br><a href="tel:+4915143815811">0151-43815811</a></div></div>
+                    <div class="contact-item"><div class="icon">✉️</div><div><strong>E-Mail</strong><br><a href="mailto:hargitta@gmail.com">hargitta@gmail.com</a></div></div>
+                    <p style="position: relative; z-index: 1; margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9;"><i class="fas fa-info-circle"></i> Falls Sie mich telefonisch nicht erreichen, bitte schreiben Sie per WhatsApp oder SMS.</p>
+                </div>
+                <div class="contact-form animate-on-scroll fade-in-right">
+                    <h3>Nachricht senden</h3>
+                    <form id="contactForm">
+                        <div class="form-group"><label for="name">Name</label><input type="text" id="name" placeholder="Ihr vollständiger Name"></div>
+                        <div class="form-group"><label for="email">E-Mail-Adresse *</label><input type="email" id="email" placeholder="ihre@email.de" required></div>
+                        <div class="form-group"><label for="phone">Telefonnummer</label><input type="tel" id="phone" placeholder="Ihre Telefonnummer"></div>
+                        <div class="form-group"><label for="message">Nachricht *</label><textarea id="message" rows="4" placeholder="Ihre Nachricht an mich..." required></textarea></div>
+                        <p class="consent-text">Durch Klicken des „Abschicken"-Buttons stimme ich zu, dass die im Formular eingegebenen personenbezogenen Daten zur Bearbeitung der Anfrage und der personalisierten Beratung verarbeitet werden. Meine Einwilligungen kann ich jederzeit mit Wirkung für die Zukunft postalisch oder per E-Mail widerrufen. Es gilt unsere <a href="#">Datenschutzerklärung</a>.</p>
+                        <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Abschicken</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Nach oben">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-info">
+            <strong>Hebamme Lorenz</strong><br>
+            Hargitta Tilp<br>
+            Breite Gasse 82, 90402 Nürnberg<br>
+            Tel: 0151-43815811<br>
+            hargitta@gmail.com
+        </div>
+        <div class="footer-links">
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+            <a href="#">Cookie-Einstellungen</a>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Scroll Animation Observer
+        const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -30px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, observerOptions);
+        document.querySelectorAll('.animate-on-scroll').forEach(element => observer.observe(element));
+
+        // Navbar scroll effect + Scroll-to-top button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            scrollToTopBtn.classList.toggle('visible', window.scrollY > 500);
+            
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+                if (scrollPos >= top && scrollPos < top + height) {
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) link.classList.add('active');
+                    });
+                }
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const offset = 80;
+                    const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: position, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            if (!email || !message) { alert('Bitte füllen Sie mindestens die Pflichtfelder (*) aus.'); return; }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.'); return; }
+            const submitBtn = this.querySelector('.btn-submit');
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-check-circle"></i> Nachricht gesendet!';
+            submitBtn.style.background = '#4CAF50';
+            submitBtn.disabled = true;
+            submitBtn.style.animation = 'bounceIn 0.5s ease';
+            setTimeout(() => {
+                this.reset();
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+                submitBtn.style.animation = '';
+            }, 3000);
+        });
+
+        // Trigger initial animations
+        setTimeout(() => {
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight) element.classList.add('visible');
+            });
+        }, 300);
+    </script>
+</body>
+</html>
