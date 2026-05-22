@@ -163,6 +163,10 @@
             from { width: 0; }
             to { width: 80px; }
         }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
 
         /* Animated Background */
         .animated-bg {
@@ -260,7 +264,7 @@
         }
         .hamburger:hover { transform: scale(1.1); color: var(--gold); }
 
-        /* Hero Section - HELLER HINTERGRUND mit schwarzer Schrift */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #FEF9F4 0%, #FFF5F9 25%, #FDF6FF 50%, #FFF8F5 75%, #FEF9F4 100%);
             background-size: 400% 400%;
@@ -351,9 +355,7 @@
             box-shadow: 0 20px 50px rgba(107,78,113,0.2);
         }
         .hero-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-        .hero-image-placeholder { color: var(--primary); font-size: 0.85rem; text-align: center; font-family: var(--font-body); opacity: 0.7; }
 
-        /* SCHWARZE SCHRIFT IM HERO */
         .hero h1 {
             font-size: 3.8rem;
             margin-bottom: 0.5rem;
@@ -518,20 +520,8 @@
             cursor: pointer;
         }
         .gallery-image:hover { transform: translateY(-10px) scale(1.02); box-shadow: var(--shadow-xl); }
-        .gallery-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--gradient);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: 1;
-        }
-        .gallery-image:hover::before { opacity: 0.08; }
         .gallery-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
         .gallery-image:hover img { transform: scale(1.05); }
-        .gallery-image-placeholder { text-align: center; color: var(--primary); font-size: 0.9rem; padding: 1rem; font-family: var(--font-body); z-index: 0; }
-        .gallery-image-placeholder .icon { font-size: 4rem; display: block; margin-bottom: 0.8rem; animation: float 4s ease-in-out infinite; }
 
         /* Services Grid */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
@@ -644,7 +634,6 @@
             animation: rotateIn 10s linear infinite;
             opacity: 0.4;
         }
-        .about-image-placeholder { color: var(--primary); font-size: 0.9rem; text-align: center; padding: 1rem; font-family: var(--font-body); }
         .about-text h3 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2.5rem; font-family: var(--font-script); }
         .about-text p { margin-bottom: 1.2rem; color: var(--text-light); line-height: 1.9; font-family: var(--font-body); font-weight: 400; }
         .qualification-badges { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
@@ -675,30 +664,7 @@
             overflow: hidden;
             box-shadow: var(--shadow-xl);
         }
-        .contact-info::before {
-            content: '';
-            position: absolute;
-            bottom: -60px;
-            right: -60px;
-            width: 250px;
-            height: 250px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-        }
-        .contact-info::after {
-            content: '';
-            position: absolute;
-            top: -40px;
-            left: -40px;
-            width: 150px;
-            height: 150px;
-            background: rgba(255,215,0,0.2);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite reverse;
-        }
         .contact-info h3 { margin-bottom: 1.5rem; font-size: 2.5rem; position: relative; z-index: 1; font-family: var(--font-script); }
-        .contact-info > p { position: relative; z-index: 1; opacity: 0.95; margin-bottom: 2rem; line-height: 1.8; font-family: var(--font-body); font-weight: 300; }
         .contact-item {
             display: flex;
             align-items: flex-start;
@@ -725,7 +691,6 @@
             flex-shrink: 0;
             transition: var(--transition);
         }
-        .contact-item:hover .icon { background: rgba(255,215,0,0.3); animation: pulse 1s ease-in-out; }
         .contact-item a { color: white; text-decoration: none; transition: var(--transition); }
         .contact-item a:hover { color: var(--gold-light); }
         .btn-whatsapp {
@@ -746,7 +711,6 @@
             font-size: 1.05rem;
         }
         .btn-whatsapp:hover { background: #1ea952; transform: translateY(-5px); box-shadow: 0 15px 35px rgba(37,211,102,0.4); }
-        .btn-whatsapp i { font-size: 1.3rem; animation: waveFlow 2s ease-in-out infinite; }
 
         .contact-form {
             background: var(--white);
@@ -757,10 +721,9 @@
             position: relative;
             overflow: hidden;
         }
-        .contact-form:hover { box-shadow: var(--shadow-xl); }
-        .contact-form h3 { color: var(--primary); margin-bottom: 2rem; font-size: 2.5rem; font-family: var(--font-script); position: relative; z-index: 1; }
-        .form-group { margin-bottom: 1.5rem; position: relative; z-index: 1; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-family: var(--font-body); font-size: 0.9rem; letter-spacing: 0.3px; }
+        .contact-form h3 { color: var(--primary); margin-bottom: 2rem; font-size: 2.5rem; font-family: var(--font-script); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-family: var(--font-body); font-size: 0.9rem; }
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -775,8 +738,7 @@
         }
         .form-group input:focus,
         .form-group textarea:focus { outline: none; border-color: var(--accent); background: white; box-shadow: 0 0 0 5px rgba(201,165,199,0.1); }
-        .form-group textarea { min-height: 120px; }
-        .consent-text { font-size: 0.8rem; color: var(--text-light); margin: 1.5rem 0; line-height: 1.6; font-family: var(--font-body); position: relative; z-index: 1; }
+        .consent-text { font-size: 0.8rem; color: var(--text-light); margin: 1.5rem 0; line-height: 1.6; }
         .consent-text a { color: var(--primary); text-decoration: underline; }
         .btn-submit {
             width: 100%;
@@ -791,26 +753,9 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            letter-spacing: 0.5px;
             font-family: var(--font-body);
-            position: relative;
-            overflow: hidden;
         }
-        .btn-submit::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-        .btn-submit:hover::after { width: 400px; height: 400px; }
         .btn-submit:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
-        .btn-submit:active { transform: translateY(0); }
 
         /* Footer */
         footer {
@@ -883,17 +828,126 @@
         .scroll-to-top:hover { transform: translateY(-5px); }
         .scroll-to-top.visible { display: flex; }
 
+        /* ---------- SCHÖNES COOKIE POPUP (BANNER) ---------- */
+        .cookie-popup {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            max-width: 420px;
+            width: calc(100% - 40px);
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px);
+            background: linear-gradient(145deg, #ffffff 0%, #fefafd 100%);
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(107,78,113,0.35), 0 0 0 1px rgba(212,168,67,0.15);
+            padding: 1.8rem;
+            z-index: 2000;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            animation: slideInRight 0.5s ease-out;
+            border: 1px solid rgba(212,168,67,0.3);
+        }
+        .cookie-popup.hide-popup {
+            transform: translateX(120%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .popup-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+        .popup-icon {
+            font-size: 2.2rem;
+            background: var(--gradient);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .popup-header h3 {
+            font-family: var(--font-script);
+            font-size: 1.7rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        .popup-message {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        .popup-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+        }
+        .popup-btn {
+            flex: 1;
+            padding: 0.8rem 0;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: center;
+            border: none;
+            font-family: var(--font-body);
+        }
+        .popup-btn-primary {
+            background: var(--gradient);
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 4px 12px rgba(107,78,113,0.25);
+        }
+        .popup-btn-primary:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.02);
+            box-shadow: 0 8px 20px rgba(107,78,113,0.3);
+        }
+        .popup-btn-secondary {
+            background: var(--light);
+            border: 1px solid var(--accent);
+            color: var(--primary-dark);
+        }
+        .popup-btn-secondary:hover {
+            background: var(--secondary);
+            border-color: var(--primary-light);
+        }
+        .popup-link {
+            text-align: center;
+            font-size: 0.75rem;
+        }
+        .popup-link a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dashed var(--gold-light);
+        }
+        .popup-link a:hover { color: var(--primary); }
+        .popup-close {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+        .popup-close:hover { color: var(--primary); transform: rotate(90deg); }
+
+        @media (max-width: 580px) {
+            .cookie-popup { left: 20px; right: 20px; bottom: 20px; max-width: none; padding: 1.5rem; }
+            .popup-header h3 { font-size: 1.4rem; }
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
-            .services-gallery {
-                grid-template-columns: repeat(3, 1fr); /* Bilder bleiben horizontal nebeneinander */
-                gap: 1rem;
-                max-width: 100%;
-                margin: 0 auto 2rem;
-            }
-            .gallery-image {
-                height: 200px; /* Kleinere Höhe für mobile Ansicht */
-            }
+            .services-gallery { gap: 1rem; }
+            .gallery-image { height: 200px; }
             .contact-grid, .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
         }
         @media (max-width: 768px) {
@@ -905,7 +959,6 @@
             .hero p { font-size: 1rem; }
             .hero-buttons { flex-direction: column; align-items: center; }
             .btn { width: 85%; text-align: center; }
-            .btn-outline { margin-left: 0; }
             .section-title { font-size: 2.4rem; }
             section { padding: 4rem 1.5rem; }
             .services-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
@@ -915,33 +968,15 @@
             .about-image-decoration { width: 250px; height: 250px; }
             .about-image-ring { width: 270px; height: 270px; }
             .scroll-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
-            
-            /* Für sehr kleine Bildschirme: Bilder noch etwas kleiner, aber horizontal */
-            .services-gallery {
-                gap: 0.8rem;
-            }
-            .gallery-image {
-                height: 160px;
-                border-radius: 15px;
-            }
+            .services-gallery { gap: 0.8rem; }
+            .gallery-image { height: 160px; border-radius: 15px; }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: 2rem; }
             .hero .script-name { font-size: 2.5rem; }
-            .hero-badge { font-size: 0.8rem; padding: 0.5rem 1.5rem; }
             .section-title { font-size: 2rem; }
-            .contact-info h3, .contact-form h3 { font-size: 2rem; }
-            .about-text h3 { font-size: 2rem; }
-            
-            /* Auf sehr kleinen Handys: Bilder bleiben horizontal, aber noch kleiner */
-            .services-gallery {
-                grid-template-columns: repeat(3, 1fr); /* Weiterhin 3 Spalten */
-                gap: 0.5rem;
-            }
-            .gallery-image {
-                height: 120px;
-                border-radius: 12px;
-            }
+            .services-gallery { gap: 0.5rem; }
+            .gallery-image { height: 120px; border-radius: 12px; }
         }
     </style>
 </head>
@@ -978,7 +1013,7 @@
         <a href="#contact" onclick="toggleMenu()">Kontakt</a>
     </div>
 
-    <!-- Home / Hero Section mit HELLEM Hintergrund und SCHWARZER Schrift -->
+    <!-- Home / Hero Section -->
     <section class="hero" id="home">
         <div class="hero-sparkles">
             <span class="sparkle" style="top: 10%; left: 8%; animation-delay: 0s; color: var(--gold);">✦</span>
@@ -995,12 +1030,9 @@
         
         <div class="hero-content">
             <div class="hero-badge">✨ Herzlich willkommen in Nürnberg ✨</div>
-            
-            <!-- HOME: 1 Bild -->
             <div class="hero-image animate-on-scroll scale-in">
-                <img src="Start.webp" alt="Hebamme Lorenz">
+                <img src="Webseite Lorenz/Start.webp" alt="Hebamme Lorenz">
             </div>
-            
             <h1>Hebamme <span class="highlight">Lorenz</span></h1>
             <span class="script-name">Hargitta Tilp</span>
             <p>Herzlich willkommen auf meiner Website! Seit August 2012 begleite ich als Hebamme Frauen und ihre Familien in der Innenstadt von Nürnberg. Mit einem breiten Spektrum an Leistungen stehe ich Ihnen einfühlsam zur Seite, ganz individuell und auf Ihre Bedürfnisse zugeschnitten. Von der Schwangerschaftsbetreuung bis zur Wochenbett-Nachsorge – hier finden Sie kompetente Unterstützung für einen gesunden Start ins Familienleben. Fühlen Sie sich herzlich eingeladen, mehr über meine Arbeit und Angebote zu erfahren.</p>
@@ -1018,16 +1050,15 @@
             <h2 class="section-title animate-on-scroll fade-in-up">Meine Leistungen</h2>
             <p class="section-subtitle animate-on-scroll fade-in-up">Umfassende Betreuung für Ihre individuelle Reise</p>
             
-            <!-- SERVICES: 3 Bilder Galerie -->
             <div class="services-gallery">
                 <div class="gallery-image animate-on-scroll fade-in-left">
-                    <img src="Leistung.webp" alt="">
+                    <img src="Webseite Lorenz/Leistung.webp" alt="">
                 </div>
                 <div class="gallery-image animate-on-scroll scale-in-up">
-                    <img src="Leistung.avif" alt="">
+                    <img src="Webseite Lorenz/Leistung.avif" alt="">
                 </div>
                 <div class="gallery-image animate-on-scroll fade-in-right">
-                    <img src="Zimmer.avif" alt="">
+                    <img src="Webseite Lorenz/Zimmer.avif" alt="">
                 </div>
             </div>
             
@@ -1060,8 +1091,7 @@
                     <div class="about-image-ring"></div>
                     <div class="about-image-decoration"></div>
                     <div class="about-image">
-                        <!-- ÜBER UNS: 1 Bild -->
-                        <img src="Ich.webp" alt="Hebamme Lorenz">
+                        <img src="Webseite Lorenz/Ich.webp" alt="Hebamme Lorenz">
                     </div>
                 </div>
                 <div class="about-text animate-on-scroll fade-in-right">
@@ -1128,11 +1158,31 @@
             hargitta@gmail.com
         </div>
         <div class="footer-links">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
-            <a href="#">Cookie-Einstellungen</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="cookie-einstellungen.html">Cookie-Einstellungen</a>
         </div>
     </footer>
+
+    <!-- SCHÖNES COOKIE POPUP BANNER -->
+    <div id="cookiePopup" class="cookie-popup">
+        <button class="popup-close" id="closePopupBtn" aria-label="Schließen">✕</button>
+        <div class="popup-header">
+            <span class="popup-icon">🍪✨</span>
+            <h3>Cookie-Einstellungen</h3>
+        </div>
+        <div class="popup-message">
+            Wir verwenden Cookies, um Dir die bestmögliche Erfahrung auf unserer Website zu bieten. 
+            Essenzielle Cookies sind immer aktiv, für funktionale Cookies bitten wir um Deine Zustimmung.
+        </div>
+        <div class="popup-buttons">
+            <button class="popup-btn popup-btn-primary" id="popupAcceptAll">Alle akzeptieren</button>
+            <button class="popup-btn popup-btn-secondary" id="popupRejectAll">Nur notwendige</button>
+        </div>
+        <div class="popup-link">
+            <a href="#" id="customizeLink">Individuelle Einstellungen vornehmen →</a>
+        </div>
+    </div>
 
     <script>
         // Mobile Menu Toggle
@@ -1198,13 +1248,11 @@
             submitBtn.innerHTML = '<i class="fas fa-check-circle"></i> Nachricht gesendet!';
             submitBtn.style.background = '#4CAF50';
             submitBtn.disabled = true;
-            submitBtn.style.animation = 'bounceIn 0.5s ease';
             setTimeout(() => {
                 this.reset();
                 submitBtn.innerHTML = originalHTML;
                 submitBtn.style.background = '';
                 submitBtn.disabled = false;
-                submitBtn.style.animation = '';
             }, 3000);
         });
 
@@ -1215,6 +1263,73 @@
                 if (rect.top < window.innerHeight) element.classList.add('visible');
             });
         }, 300);
+
+        // --- COOKIE POPUP LOGIK ---
+        const popup = document.getElementById('cookiePopup');
+        const acceptAllBtn = document.getElementById('popupAcceptAll');
+        const rejectAllBtn = document.getElementById('popupRejectAll');
+        const closePopupBtn = document.getElementById('closePopupBtn');
+        const customizeLink = document.getElementById('customizeLink');
+
+        function showFloatingToast(message, colorHex) {
+            const toast = document.createElement('div');
+            toast.innerText = message;
+            toast.style.position = 'fixed';
+            toast.style.bottom = '100px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = colorHex;
+            toast.style.color = 'white';
+            toast.style.padding = '12px 24px';
+            toast.style.borderRadius = '60px';
+            toast.style.fontWeight = '600';
+            toast.style.fontSize = '0.9rem';
+            toast.style.zIndex = '3000';
+            toast.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+            toast.style.fontFamily = "var(--font-body)";
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.4s';
+                setTimeout(() => toast.remove(), 500);
+            }, 2800);
+        }
+
+        function acceptAllCookies() {
+            sessionStorage.setItem('cookie_decision', 'accepted');
+            popup.classList.add('hide-popup');
+            showFloatingToast('✅ Vielen Dank! Alle Cookies wurden akzeptiert.', '#2c7a47');
+        }
+
+        function rejectAllCookies() {
+            sessionStorage.setItem('cookie_decision', 'rejected');
+            popup.classList.add('hide-popup');
+            showFloatingToast('🔒 Nur notwendige Cookies bleiben aktiv.', '#b65e00');
+        }
+
+        const hasConsent = sessionStorage.getItem('cookie_decision');
+        if (!hasConsent) {
+            setTimeout(() => {
+                if (popup && !popup.classList.contains('hide-popup')) {
+                    popup.style.animation = 'slideInRight 0.5s ease-out';
+                }
+            }, 500);
+        } else {
+            popup.classList.add('hide-popup');
+        }
+
+        if (acceptAllBtn) acceptAllBtn.addEventListener('click', acceptAllCookies);
+        if (rejectAllBtn) rejectAllBtn.addEventListener('click', rejectAllCookies);
+        if (closePopupBtn) closePopupBtn.addEventListener('click', () => {
+            popup.classList.add('hide-popup');
+            showFloatingToast('🍪 Sie können Ihre Einstellungen jederzeit im Footer anpassen.', '#6B4E71');
+        });
+        if (customizeLink) {
+            customizeLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'cookie-einstellungen.html';
+            });
+        }
     </script>
 </body>
 </html>
