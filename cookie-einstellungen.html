@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Cookie-Richtlinie - Hebamme Lorenz | Nürnberg</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6B4E71;
+            --primary-light: #8B6B91;
+            --primary-dark: #4A3550;
+            --secondary: #F0E6EF;
+            --accent: #C9A5C7;
+            --accent-light: #E8D5E4;
+            --gold: #D4A843;
+            --gold-light: #F0D78C;
+            --text: #1A1A1A;
+            --text-light: #4A4A4A;
+            --light: #FAF7FA;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #6B4E71 0%, #8B6B91 50%, #A889A8 100%);
+            --gradient-gold: linear-gradient(135deg, #D4A843 0%, #F0D78C 100%);
+            --shadow-sm: 0 2px 15px rgba(107,78,113,0.08);
+            --shadow-md: 0 10px 30px rgba(107,78,113,0.12);
+            --shadow-lg: 0 20px 60px rgba(107,78,113,0.15);
+            --font-script: 'Dancing Script', cursive;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Raleway', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text);
+            background: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 400;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-light);
+        }
+
+        ::selection {
+            background: var(--accent-light);
+            color: var(--primary-dark);
+        }
+
+        /* Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 30px rgba(107, 78, 113, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+
+        .navbar.scrolled {
+            padding: 0.6rem 2rem;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid var(--secondary);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-script);
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            color: var(--gold);
+            transform: scale(1.02);
+        }
+
+        .logo-icon {
+            display: inline-block;
+            animation: leafSway 3s ease-in-out infinite;
+            font-size: 1.8rem;
+        }
+
+        @keyframes leafSway {
+
+            0%,
+            100% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            25% {
+                transform: rotate(8deg) scale(1.05);
+            }
+
+            75% {
+                transform: rotate(-6deg) scale(0.95);
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            position: relative;
+            padding: 0.4rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-gold);
+            transition: width 0.4s ease;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .hamburger:hover {
+            transform: scale(1.1);
+            color: var(--gold);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(30px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: var(--transition);
+            font-family: var(--font-heading);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 2.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .close-menu:hover {
+            transform: rotate(90deg);
+            color: var(--gold);
+        }
+
+        /* Page Header mit Blumenakzent */
+        .page-header {
+            background: var(--gradient);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '🌾';
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 80px;
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .page-header::after {
+            content: '🌸';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 70px;
+            opacity: 0.2;
+            animation: float 6s ease-in-out infinite reverse;
+            pointer-events: none;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-script);
+            font-size: 3.5rem;
+            position: relative;
+            z-index: 2;
+            letter-spacing: 1px;
+        }
+
+        .page-header p {
+            font-family: var(--font-body);
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Hauptcontent */
+        .content-section {
+            flex: 1;
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Einleitungskarte wie im Screenshot mit Buttons "Alle akzeptieren / Alle ablehnen" */
+        .cookie-consent-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 32px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2.5rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(201, 165, 199, 0.3);
+        }
+
+        .cookie-consent-card p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 1.8rem 0 1.5rem 0;
+        }
+
+        .btn-accept-all {
+            background: var(--gradient);
+            background-size: 200% auto;
+            border: none;
+            color: white;
+            font-weight: 700;
+            padding: 0.9rem 2.2rem;
+            border-radius: 60px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            letter-spacing: 0.5px;
+        }
+
+        .btn-accept-all:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            background-position: right center;
+        }
+
+        .btn-reject-all {
+            background: transparent;
+            border: 2px solid var(--primary-light);
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.85rem 2.2rem;
+            border-radius: 60px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-reject-all:hover {
+            background: rgba(107, 78, 113, 0.08);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .footer-legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-legal-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .footer-legal-links a:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        /* Kategorie Styling */
+        .cookie-category {
+            background: var(--white);
+            border-radius: 28px;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .cookie-category:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .category-header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border-left: 6px solid var(--accent);
+        }
+
+        .category-header.required {
+            border-left-color: #2c7a47;
+        }
+
+        .category-header.functional {
+            border-left-color: #1976d2;
+        }
+
+        .category-header.marketing {
+            border-left-color: #ed6c02;
+        }
+
+        .category-header.performance {
+            border-left-color: #9c27b0;
+        }
+
+        .category-header:hover {
+            background: var(--light);
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            width: 52px;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            color: var(--primary);
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            font-weight: 700;
+            margin-top: 0.3rem;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-always-active {
+            background: #e6f4ea;
+            color: #1e6f3f;
+            border-left: 2px solid #2c7a47;
+        }
+
+        .badge-empty {
+            background: #fff3e0;
+            color: #b65e00;
+        }
+
+        .category-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .category-arrow {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+
+        .category-arrow.open {
+            transform: rotate(180deg);
+        }
+
+        .category-content {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+        }
+
+        .category-content.open {
+            max-height: 2000px;
+            padding: 0 2rem 2rem 2rem;
+        }
+
+        .category-content p {
+            color: var(--text-light);
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+
+        .cookie-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid var(--accent);
+            transition: var(--transition);
+        }
+
+        .cookie-item h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.6rem;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+        }
+
+        .cookie-item p {
+            font-size: 0.92rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .cookie-details {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            background: rgba(107, 78, 113, 0.04);
+            padding: 0.7rem;
+            border-radius: 14px;
+        }
+
+        .external-links {
+            margin-top: 0.9rem;
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .external-links a {
+            font-size: 0.8rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .external-links a:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        .no-cookies {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            background: rgba(249, 243, 245, 0.6);
+            border-radius: 24px;
+            font-style: normal;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            transition: var(--transition);
+            padding: 0.7rem 1.8rem;
+            border: 2px solid var(--primary-light);
+            border-radius: 60px;
+            background: white;
+        }
+
+        .back-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(-6px);
+            border-color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            font-family: var(--font-body);
+            position: relative;
+            margin-top: auto;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-gold);
+        }
+
+        footer a {
+            color: var(--gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        .footer-info {
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .page-header {
+                padding: 3rem 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-section {
+                padding: 2rem 1.2rem;
+            }
+
+            .category-header {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .category-content.open {
+                padding: 0 1.2rem 1.5rem 1.2rem;
+            }
+
+            .cookie-consent-card {
+                padding: 1.8rem;
+            }
+
+            .action-buttons {
+                gap: 1rem;
+            }
+
+            .btn-accept-all,
+            .btn-reject-all {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .category-icon {
+                font-size: 1.5rem;
+                width: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🌿</span> Hebamme Lorenz
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Leistungen</a></li>
+            <li><a href="index.html#about">Über mich</a></li>
+            <li><a href="index.html#contact">Kontakt</a></li>
+        </ul>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menü öffnen">☰</button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" onclick="toggleMenu()" aria-label="Schließen">✕</button>
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="index.html#services" onclick="toggleMenu()">Leistungen</a>
+        <a href="index.html#about" onclick="toggleMenu()">Über mich</a>
+        <a href="index.html#contact" onclick="toggleMenu()">Kontakt</a>
+    </div>
+
+    <!-- Header -->
+    <header class="page-header">
+        <h1>Cookie-Richtlinie</h1>
+        <p>Transparenz & individuelle Kontrolle Ihrer Daten</p>
+    </header>
+
+    <main class="content-section">
+        <!-- Cookie-Einleitung wie auf dem Bild: Beschreibung + Alle akzeptieren / Alle ablehnen + Impressum/Datenschutz -->
+        <div class="cookie-consent-card">
+            <p>🍪 Diese Website verwendet Cookies, um die Nutzererfahrung zu verbessern. Weitere Informationen zu den Cookie-Arten finden sich unter den jeweiligen Kategorien. Dort lassen sich auch einzelne Cookies aktivieren (sofern nicht erforderlich). Die Cookie-Einstellungen können jederzeit über den Link im Footer dieser Website angepasst werden.</p>
+            <div class="action-buttons">
+                <button class="btn-accept-all" id="acceptAllBtn">✅ Alle akzeptieren</button>
+                <button class="btn-reject-all" id="rejectAllBtn">❌ Alle ablehnen</button>
+            </div>
+            <div class="footer-legal-links">
+                <a href="impressum.html">📄 Impressum</a>
+                <span style="color: var(--accent);">|</span>
+                <a href="datenschutz.html">🔒 Datenschutz</a>
+            </div>
+        </div>
+
+        <!-- Kategorie: Unbedingt erforderlich (immer aktiv / kein Ablehnen) -->
+        <div class="cookie-category">
+            <div class="category-header required" onclick="toggleCategory(this)">
+                <div class="category-title">
+                    <div class="category-icon">🔒</div>
+                    <div class="category-info">
+                        <h3>Unbedingt erforderlich</h3>
+                        <span class="badge badge-always-active">Immer aktiv</span>
+                    </div>
+                </div>
+                <div class="category-toggle">
+                    <span>Immer aktiv</span>
+                    <span class="category-arrow">▼</span>
+                </div>
+            </div>
+            <div class="category-content">
+                <p>Unbedingt erforderliche Cookies ermöglichen grundlegende Funktionen und sind für die einwandfreie Funktion der Website erforderlich. Daher kann man sie nicht deaktivieren. Diese Art von Cookies wird ausschließlich von dem Betreiber der Website verwendet (First-Party-Cookie) und sämtliche Informationen, die in den Cookies gespeichert sind, werden nur an diese Website gesendet.</p>
+                <div class="cookie-item">
+                    <h4>☁️ Cloudflare</h4>
+                    <p>Cloudflare ist ein Dienst, der die Sicherheit und Geschwindigkeit von Webseiten erhöht. Cloudflare bietet ein Content Delivery Network ("CDN"), um die Ladezeiten der Website zu verbessern.</p>
+                    <p class="cookie-details"><strong>Anbieter:</strong> Cloudflare Inc., 101 Townsend St, San Francisco, CA 94107 USA<br>
+                    <strong>Cookie-Namen & Speicherdauer:</strong> __cfruid (Session), __cf_bm (30 Min), __cf_clearance (30 Min)</p>
+                    <div class="external-links">
+                        <a href="https://www.cloudflare.com/cookie-policy/" target="_blank">🍪 Cookie-Richtlinie</a>
+                        <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">🔒 Datenschutzerklärung</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategorie: Funktionell (Google Maps Beispiel) -->
+        <div class="cookie-category">
+            <div class="category-header functional" onclick="toggleCategory(this)">
+                <div class="category-title">
+                    <div class="category-icon">⚙️</div>
+                    <div class="category-info">
+                        <h3>Funktionell</h3>
+                    </div>
+                </div>
+                <div class="category-toggle">
+                    <span>Details</span>
+                    <span class="category-arrow">▼</span>
+                </div>
+            </div>
+            <div class="category-content">
+                <p>Funktionelle Cookies ermöglichen dieser Website, bestimmte Funktionen zur Verfügung zu stellen und Informationen zu speichern, die vom Nutzer eingegeben wurden – beispielsweise bereits registrierte Namen oder die Sprachauswahl. Damit werden verbesserte und personalisierte Funktionen gewährleistet.</p>
+                <div class="cookie-item">
+                    <h4>🗺️ Google Maps</h4>
+                    <p>Diese Cookies werden durch die Integration von Google Maps-Karten genutzt.</p>
+                    <p class="cookie-details"><strong>Anbieter:</strong> Google LLC / Google Ireland Limited (EU)<br>
+                    <strong>Cookie-Namen u.a.:</strong> UULE (1 Tag), OTZ (2 Wochen), NID (6 Monate), SID (2 Jahre), HSID (2 Jahre), APISID u.v.m.</p>
+                    <div class="external-links">
+                        <a href="https://policies.google.com/technologies/cookies" target="_blank">🍪 Cookie-Richtlinie</a>
+                        <a href="https://policies.google.com/privacy" target="_blank">🔒 Datenschutzerklärung</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marketing / Third Party (keine Cookies) -->
+        <div class="cookie-category">
+            <div class="category-header marketing" onclick="toggleCategory(this)">
+                <div class="category-title">
+                    <div class="category-icon">📢</div>
+                    <div class="category-info">
+                        <h3>Marketing / Third Party</h3>
+                        <span class="badge badge-empty">Keine Cookies</span>
+                    </div>
+                </div>
+                <div class="category-toggle">
+                    <span class="category-arrow">▼</span>
+                </div>
+            </div>
+            <div class="category-content">
+                <p>Marketing- / Third Party-Cookies stammen unter anderem von externen Werbeunternehmen und werden verwendet, um Informationen über die vom Nutzer besuchten Websites zu sammeln, um zielgruppenorientierte Werbung zu erstellen.</p>
+                <div class="no-cookies">
+                    <span style="font-size: 2rem;">🍪✨</span>
+                    <p>Derzeit werden keine Marketing-Cookies von Drittanbietern eingesetzt.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance (keine Cookies derzeit) -->
+        <div class="cookie-category">
+            <div class="category-header performance" onclick="toggleCategory(this)">
+                <div class="category-title">
+                    <div class="category-icon">📊</div>
+                    <div class="category-info">
+                        <h3>Performance</h3>
+                        <span class="badge badge-empty">Keine Cookies</span>
+                    </div>
+                </div>
+                <div class="category-toggle">
+                    <span class="category-arrow">▼</span>
+                </div>
+            </div>
+            <div class="category-content">
+                <p>Performance-Cookies sammeln Informationen darüber, wie diese Website genutzt wird. Der Betreiber nutzt diese Cookies um die Attraktivität und Funktionalität zu verbessern.</p>
+                <div class="no-cookies">
+                    <span style="font-size: 2rem;">📈</span>
+                    <p>Aktuell keine Analyse-Cookies im Einsatz.</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <strong>Hebamme Lorenz</strong><br>
+            Hargitta Tilp<br>
+            Breite Gasse 82, 90402 Nürnberg<br>
+            Tel: 0151-43815811<br>
+            hargitta@gmail.com
+        </div>
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="cookie-einstellungen.html">Cookie-Einstellungen</a>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // Cookie Category Accordion (only one open at a time)
+        function toggleCategory(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.category-arrow');
+            const isCurrentlyOpen = content.classList.contains('open');
+
+            // Close all categories
+            document.querySelectorAll('.category-content').forEach(c => c.classList.remove('open'));
+            document.querySelectorAll('.category-arrow').forEach(a => a.classList.remove('open'));
+
+            // If it wasn't open, open this one
+            if (!isCurrentlyOpen) {
+                content.classList.add('open');
+                if (arrow) arrow.classList.add('open');
+            }
+        }
+
+        // Simulate "Alle akzeptieren" / "Alle ablehnen" (Info-Meldung für Konsistenz)
+        const acceptBtn = document.getElementById('acceptAllBtn');
+        const rejectBtn = document.getElementById('rejectAllBtn');
+
+        if (acceptBtn) {
+            acceptBtn.addEventListener('click', () => {
+                alert('✅ Sie haben allen Cookies (inkl. funktioneller/marketing) zugestimmt. (Demo-Funktion)');
+                // Hier könnte echter Cookie-Consent gespeichert werden.
+                // Falls gewünscht, können nicht-essenzielle Kategorien aktiviert werden.
+            });
+        }
+        if (rejectBtn) {
+            rejectBtn.addEventListener('click', () => {
+                alert('❌ Sie haben nicht notwendige Cookies abgelehnt. Es werden nur erforderliche Cookies gesetzt.');
+            });
+        }
+
+        // Make first category (unbedingt erforderlich) open by default
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstCategoryContent = document.querySelector('.cookie-category .category-content');
+            const firstArrow = document.querySelector('.cookie-category .category-arrow');
+            if (firstCategoryContent && !firstCategoryContent.classList.contains('open')) {
+                firstCategoryContent.classList.add('open');
+                if (firstArrow) firstArrow.classList.add('open');
+            }
+        });
+    </script>
+</body>
+</html>
